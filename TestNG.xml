@@ -1,0 +1,15 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd" >
+<suite name="UIAutomationTesting">
+
+
+
+
+    <test name="Test_1-Chrome">
+        <parameter name="browser" value="chrome"/>
+        <classes>
+            <class name="tests.Test1"/>
+        </classes>
+    </test>
+
+
+</suite>
