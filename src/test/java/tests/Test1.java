@@ -12,6 +12,7 @@ public class Test1 extends BaseClass {
     public void formSubmission() {
 
         formsubmit.openBrowser("https://testautomationpractice.blogspot.com/");
+        formsubmit.formSubmit("Ranum Khan", "abc@gmail.com", "09876543212", "abc street-block 11, xyz");
 
     }
 

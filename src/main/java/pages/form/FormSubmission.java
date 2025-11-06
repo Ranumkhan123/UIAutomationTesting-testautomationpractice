@@ -2,7 +2,11 @@ package pages.form;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
+
+
 
 import java.time.Duration;
 
@@ -22,8 +26,12 @@ public class FormSubmission {
 
 
     // Locators
-    By
-
+    By formHeading = By.cssSelector("#Blog1 > div.blog-posts.hfeed > div > div > div > div > h3 > a");
+    By enterName = By.id("name");
+    By enterEmail = By.id("email");
+    By phoneNo = By.id("phone");
+    By enterAddress = By.id("textarea");
+    By genderRadioBtn = By.id("female");
 
 
 
@@ -37,7 +45,41 @@ public class FormSubmission {
     }
 
 
+    public void formSubmit(String name, String email, String phone, String address){
 
+        WebElement verifyFormHeading = wait.until(ExpectedConditions.visibilityOfElementLocated(formHeading));
+
+
+        //name
+        WebElement enterNameText = wait.until(ExpectedConditions.visibilityOfElementLocated(enterName));
+        enterNameText.sendKeys(name);
+
+        //email
+        WebElement enterEmailText = wait.until(ExpectedConditions.visibilityOfElementLocated(enterEmail));
+        enterEmailText.sendKeys(email);
+
+        //phoneno
+        WebElement enterPhoneNo = wait.until(ExpectedConditions.visibilityOfElementLocated(phoneNo));
+        enterPhoneNo.sendKeys(phone);
+
+        //address
+        WebElement enterAddressText = wait.until(ExpectedConditions.visibilityOfElementLocated(enterAddress));
+        enterAddressText.sendKeys(address);
+
+        //gender
+        WebElement selectGenderBtn = wait.until(ExpectedConditions.visibilityOfElementLocated(genderRadioBtn));
+        if (selectGenderBtn.isSelected()) {
+            selectGenderBtn.click();
+        }
+
+
+
+
+
+
+
+
+    }
 
 
 }
