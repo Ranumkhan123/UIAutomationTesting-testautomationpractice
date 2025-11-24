@@ -32,6 +32,15 @@ public class FormSubmission {
     By phoneNo = By.id("phone");
     By enterAddress = By.id("textarea");
     By genderRadioBtn = By.id("female");
+    By dayCheckbox = By.cssSelector("label[for='days']");
+    By selectDayCheckbox = By.id("monday");
+    By selectCountryDropdown = By.id("country");
+    By selectCountry = By.cssSelector("#country > option:nth-child(3)");
+    By colorsScrolls = By.id("colors");
+    By selectColor = By.cssSelector("#colors > option:nth-child(7)");
+
+
+
 
 
 
@@ -71,6 +80,26 @@ public class FormSubmission {
         if (selectGenderBtn.isSelected()) {
             selectGenderBtn.click();
         }
+
+        //daycheckbox
+        WebElement dayCheckboxesVisible = wait.until(ExpectedConditions.visibilityOfElementLocated(dayCheckbox));
+
+        WebElement selectDay = wait.until(ExpectedConditions.visibilityOfElementLocated(selectDayCheckbox));
+        if (selectDay.isSelected()) {
+            selectDay.click();
+        }
+
+        //countrydropdown
+        WebElement countryDropdown = wait.until(ExpectedConditions.visibilityOfElementLocated(selectCountryDropdown));
+        countryDropdown.click();
+        WebElement selectCountryName = wait.until(ExpectedConditions.visibilityOfElementLocated(selectCountry));
+        selectCountryName.click();
+
+        //colorscrolls
+        WebElement colorsDropdown = wait.until(ExpectedConditions.visibilityOfElementLocated(colorsScrolls));
+        colorsDropdown.click();
+        WebElement selectColorName = wait.until(ExpectedConditions.visibilityOfElementLocated(selectColor));
+        selectColorName.click();
 
 
 
